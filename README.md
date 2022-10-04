@@ -10,11 +10,16 @@ output.
 ## How to run it
 
 ```bash
-# run the app via make
-make run
 
-# or run it directly
-APP_ENV=prod python -m python_cli_skeleton_app
+# setup tooling
+# only run this once
+make setup
+
+# install/reinstall project dependencies
+make install
+
+# run the app
+make run
 ```
 
 You should see an output similar to the one below.

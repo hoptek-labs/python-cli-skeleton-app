@@ -1,3 +1,13 @@
+.PHONY: setup
+setup:
+	@echo "== setup"
+	# see: https://python-poetry.org/docs/#installation
+	curl -sSL "https://install.python-poetry.org" | python3 - --version 1.2.0
+
+.PHONY: install
+install:
+	@echo "== install"
+	poetry install
 
 .PHONY: unit-test
 unit-test:
