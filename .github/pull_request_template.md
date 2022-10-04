@@ -1,6 +1,6 @@
-Required by #[JIRA-ISSUE-NUMBER]
+Required by #[ISSUE-NUMBER]
 
-Part of epic #[JIRA-ISSUE-NUMBER]
+Part of epic #[ISSUE-NUMBER]
 
 <!-- Write a one-liner description of this PR below -->
 
