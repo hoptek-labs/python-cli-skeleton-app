@@ -1,4 +1,5 @@
 import configparser
+import logging
 import os
 from pathlib import Path
 
@@ -18,6 +19,8 @@ class AppConfig:
     section = os.getenv('APP_ENV')
     if section is None:
         raise RuntimeError("Missing environment variable APP_ENV")
+
+    logging.info(f"Using APP_ENV {section}")
 
     @staticmethod
     def get(key):
