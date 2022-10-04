@@ -23,8 +23,8 @@ class TestAppConfig(TestCase):
             # this call should not happen
             AppConfig.get("should-not-get-to-this-line")
         self.assertEqual(
-            "Missing environment variable APP_ENV",
-            str(error.exception)
+            str(error.exception),
+            "Missing environment variable APP_ENV"
         )
 
     @mock.patch.dict(os.environ, {"APP_ENV": "invalid_app_env"})
@@ -37,14 +37,14 @@ class TestAppConfig(TestCase):
             # this call should not happen
             AppConfig.get("should-not-get-to-this-line")
         self.assertEqual(
-            f"app_config.ini does not contain a section for APP_ENV invalid_app_env",
-            str(error.exception)
+            str(error.exception),
+            f"app_config.ini does not contain a section for APP_ENV invalid_app_env"
         )
 
     def test_returns_expected_string_value(self):
         actual_test_value = AppConfig.get("test_key_string")
-        self.assertEqual("test_value_string", actual_test_value)
+        self.assertEqual(actual_test_value, "test_value_string")
 
     def test_returns_expected_int_value(self):
         actual_test_value = AppConfig.getint("test_key_int")
-        self.assertEqual(42, actual_test_value)
+        self.assertEqual(actual_test_value, 42)

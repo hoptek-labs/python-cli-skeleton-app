@@ -16,8 +16,8 @@ class TestEndpointCaller(TestCase):
         with self.assertRaises(EndpointError) as error:
             call_endpoint()
         self.assertEqual(
-            f"Error interacting with endpoint {AppConfig.get('endpoint_url')}",
-            str(error.exception)
+            str(error.exception),
+            f"Error interacting with endpoint {AppConfig.get('endpoint_url')}"
         )
 
     @responses.activate
@@ -35,6 +35,6 @@ class TestEndpointCaller(TestCase):
                 )
 
                 self.assertEqual(
-                    status_code,
-                    call_endpoint()
+                    call_endpoint(),
+                    status_code
                 )
