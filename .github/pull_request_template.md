@@ -4,7 +4,7 @@ Part of epic #[JIRA-ISSUE-NUMBER]
 
 <!-- Write a one-liner description of this PR below -->
 
-#### Main changes in this PR
+#### This PR includes
   - Change 1
   - Change 2
 
