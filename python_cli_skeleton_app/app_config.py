@@ -16,16 +16,16 @@ class AppConfig:
     root_dir = Path(__file__).parent.parent
     config.read(f"{root_dir}/{app_config_filename}")
 
-    section = os.getenv('APP_ENV')
-    if section is None:
+    app_env = os.getenv('APP_ENV')
+    if app_env is None:
         raise RuntimeError("Missing environment variable APP_ENV")
 
-    logging.info(f"Using APP_ENV {section}")
+    logging.info(f"Using APP_ENV {app_env}")
 
     @staticmethod
     def get(key):
-        return AppConfig.config.get(AppConfig.section, key)
+        return AppConfig.config.get(AppConfig.app_env, key)
 
     @staticmethod
     def getint(key):
-        return AppConfig.config.getint(AppConfig.section, key)
+        return AppConfig.config.getint(AppConfig.app_env, key)
