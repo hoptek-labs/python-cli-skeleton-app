@@ -1,7 +1,9 @@
 import requests
-import logging
 
 from python_cli_skeleton_app.app_config import AppConfig
+from python_cli_skeleton_app.app_logger import AppLogger
+
+logger = AppLogger.getLogger()
 
 
 class EndpointError(Exception):
@@ -14,7 +16,7 @@ class EndpointError(Exception):
 
 def call_endpoint():
     endpoint_url = AppConfig.get("endpoint_url")
-    logging.info(f"Will call endpoint {endpoint_url}")
+    logger.info(f"Will call endpoint {endpoint_url}")
     try:
         response = requests.get(endpoint_url)
         return response.status_code

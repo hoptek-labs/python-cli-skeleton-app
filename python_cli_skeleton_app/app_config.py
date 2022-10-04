@@ -1,5 +1,4 @@
 import configparser
-import logging
 import os
 from pathlib import Path
 
@@ -22,8 +21,6 @@ class AppConfig:
 
     if app_env not in config.sections():
         raise RuntimeError(f"{app_config_filename} does not contain a section for APP_ENV {app_env}")
-
-    logging.info(f"Using APP_ENV {app_env}")
 
     @staticmethod
     def get(key):
