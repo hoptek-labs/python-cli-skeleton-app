@@ -28,10 +28,13 @@ You should see an output similar to the one below.
 ## How to run tests
 
 ```bash
-# unit tests
+# all tests
+make test
+
+# unit tests only
 make unit-test
 
-# smoke tests
+# smoke tests only
 make smoke-test
 ```
 

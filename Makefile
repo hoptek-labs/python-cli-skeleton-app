@@ -9,6 +9,9 @@ smoke-test:
 	@echo "== run smoke tests"
 	APP_ENV=smoke-test poetry run pytest tests/smoke
 
+.PHONY: test
+test: unit-test smoke-test
+
 .PHONY: run
 run:
 	@echo "== run the app"
