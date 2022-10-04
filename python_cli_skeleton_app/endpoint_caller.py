@@ -14,7 +14,8 @@ class EndpointError(Exception):
 def call_endpoint():
     endpoint_url = AppConfig.get("endpoint_url")
     try:
-        requests.get(endpoint_url)
+        response = requests.get(endpoint_url)
+        return response.status_code
     except Exception:
         # Exception chaining happens automatically as we are in an except block.
         # This means that the exception trace will include both EndpointError raised below and any underlying Exception.

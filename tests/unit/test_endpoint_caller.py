@@ -1,5 +1,6 @@
 from unittest import TestCase, mock
 
+import responses
 from requests.exceptions import Timeout
 
 from python_cli_skeleton_app.app_config import AppConfig
@@ -18,3 +19,22 @@ class TestEndpointCaller(TestCase):
             f"Error interacting with endpoint {AppConfig.get('endpoint_url')}",
             str(error.exception)
         )
+
+    @responses.activate
+    def test_returns_status_code(self):
+        endpoint_url = AppConfig.get("endpoint_url")
+        for status_code in [200, 400, 404, 500]:
+            with self.subTest(
+                    msg=f"Returns status code {status_code}"
+            ):
+                responses.add(
+                    responses.GET,
+                    endpoint_url,
+                    body="some response body",
+                    status=status_code,
+                )
+
+                self.assertEqual(
+                    status_code,
+                    call_endpoint()
+                )
