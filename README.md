@@ -9,8 +9,8 @@ output.
 
 ## Driving Principles
 
-- Use only a minimal set of Python modules that are not included in the Python Standard Library.
-    - This app uses the following standard Libraries:
+- Use modules that are part of the Python Standard Library as much as possible.
+    - This app uses the following standard libraries:
         - `logging` for logging
         - `configparser` for application config
         - `unittest` for unit tests
@@ -29,6 +29,7 @@ This Python project is laid upon the following stack:
   with [unittest](https://docs.python.org/3/library/unittest.html) to run assertions
 - [requests](https://github.com/psf/requests) for HTTP calls and [responses](https://github.com/getsentry/responses) to
   mock responses in tests
+- Python standard library [logging](https://docs.python.org/3/howto/logging.html) for application logs
 - `Makefile` to orchestrate `build, test, run` cycles and standardise them across OSes
 
 ## Pre-requisites
