@@ -1,3 +1,5 @@
+APP_MODULE=python_cli_skeleton_app
+
 .PHONY: setup
 setup:
 	@echo "== setup"
@@ -25,4 +27,4 @@ test: unit-test smoke-test
 .PHONY: run
 run:
 	@echo "== run the app"
-	APP_ENV=prod python -m python_cli_skeleton_app
+	APP_ENV=prod python -m $(APP_MODULE)
