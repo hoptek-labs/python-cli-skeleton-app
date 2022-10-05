@@ -24,6 +24,11 @@ smoke-test:
 .PHONY: test
 test: unit-test smoke-test
 
+.PHONY: clean
+clean:
+	@echo "== clean"
+	find . -depth -type d -name '__pycache__' -exec rm -rf '{}' \;
+
 .PHONY: run
 run:
 	@echo "== run the app"
