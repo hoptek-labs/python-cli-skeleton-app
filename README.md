@@ -36,7 +36,7 @@ This Python project is laid upon the following stack:
 
 This project assumes that the following is available on your machine:
 
-- Python 3.6+
+- Python 3.10+
 - `make` and `curl` executables
 
 ## How to run it
