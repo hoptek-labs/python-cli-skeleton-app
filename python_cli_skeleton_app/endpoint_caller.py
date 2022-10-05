@@ -11,6 +11,7 @@ class EndpointError(Exception):
     EndpointError is raised on communication failure with the called endpoint.
     This could be due e.g. to a connection timeout.
     """
+
     pass
 
 

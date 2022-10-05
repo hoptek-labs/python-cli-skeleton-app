@@ -29,7 +29,13 @@ clean:
 	@echo "== clean"
 	find . -depth -type d -name '__pycache__' -exec rm -rf '{}' \;
 
+.PHONY: lint
+lint:
+	@echo "== run lint"
+	poetry run black .
+
 .PHONY: run
 run:
 	@echo "== run the app"
 	APP_ENV=prod python -m $(APP_MODULE)
+
