@@ -17,28 +17,27 @@ class TestAppConfig(TestCase):
     def test_raises_error_when_app_env_not_set(self):
         with self.assertRaises(RuntimeError) as error:
             # ensure that AppConfig will be reloaded on import so that we can test an error being raised
-            remove_module_from_imports('python_cli_skeleton_app.app_config')
+            remove_module_from_imports("python_cli_skeleton_app.app_config")
             # the line below should raise an error
             from python_cli_skeleton_app.app_config import AppConfig
+
             # this call should not happen
             AppConfig.get("should-not-get-to-this-line")
-        self.assertEqual(
-            str(error.exception),
-            "Missing environment variable APP_ENV"
-        )
+        self.assertEqual(str(error.exception), "Missing environment variable APP_ENV")
 
     @mock.patch.dict(os.environ, {"APP_ENV": "invalid_app_env"})
     def test_raises_error_when_no_section_corresponding_to_app_env(self):
         with self.assertRaises(RuntimeError) as error:
             # ensure that AppConfig will be reloaded on import so that we can test an error being raised
-            remove_module_from_imports('python_cli_skeleton_app.app_config')
+            remove_module_from_imports("python_cli_skeleton_app.app_config")
             # the line below should raise an error
             from python_cli_skeleton_app.app_config import AppConfig
+
             # this call should not happen
             AppConfig.get("should-not-get-to-this-line")
         self.assertEqual(
             str(error.exception),
-            f"app_config.ini does not contain a section for APP_ENV invalid_app_env"
+            f"app_config.ini does not contain a section for APP_ENV invalid_app_env",
         )
 
     def test_returns_expected_string_value(self):
