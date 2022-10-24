@@ -75,6 +75,13 @@ make unit-test
 make smoke-test
 ```
 
+## Other commands
+
+```bash
+# linting
+make lint
+```
+
 ## Directory Structure
 
 ```bash
