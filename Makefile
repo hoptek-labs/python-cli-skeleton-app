@@ -32,6 +32,8 @@ clean:
 .PHONY: lint
 lint:
 	@echo "== run lint"
+	@echo "\n\n== run mypy"
+	poetry run mypy .
 	@echo "\n\n== run isort"
 	poetry run isort .
 	@echo "\n\n== run black"
