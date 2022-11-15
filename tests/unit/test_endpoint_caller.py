@@ -4,7 +4,7 @@ import responses
 from requests.exceptions import Timeout
 
 from python_cli_skeleton_app.app_config import AppConfig
-from python_cli_skeleton_app.endpoint_caller import call_endpoint, EndpointError
+from python_cli_skeleton_app.endpoint_caller import EndpointError, call_endpoint
 
 
 class TestEndpointCaller(TestCase):

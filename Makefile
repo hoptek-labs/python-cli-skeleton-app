@@ -32,7 +32,12 @@ clean:
 .PHONY: lint
 lint:
 	@echo "== run lint"
+	@echo "\n\n== run isort"
+	poetry run isort .
+	@echo "\n\n== run black"
 	poetry run black .
+	@echo "\n\n== run flake8"
+	poetry run flake8
 
 .PHONY: run
 run:
