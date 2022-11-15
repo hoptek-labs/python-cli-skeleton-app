@@ -4,7 +4,7 @@ APP_MODULE=python_cli_skeleton_app
 setup:
 	@echo "== setup"
 	# see: https://python-poetry.org/docs/#installation
-	curl -sSL "https://install.python-poetry.org" | python3 - --version 1.2.0
+	curl -sSL "https://install.python-poetry.org" | python3 - --version 1.2.2
 
 .PHONY: install
 install:
