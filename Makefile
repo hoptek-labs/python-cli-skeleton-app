@@ -39,7 +39,7 @@ lint:
 	@echo "\n\n== run black"
 	poetry run black .
 	@echo "\n\n== run flake8"
-	poetry run flake8
+	poetry run flake8 $(APP_MODULE) tests
 
 .PHONY: run
 run:
