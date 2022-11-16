@@ -37,7 +37,7 @@ class TestAppConfig(TestCase):
             AppConfig.get("should-not-get-to-this-line")
         self.assertEqual(
             str(error.exception),
-            f"app_config.ini does not contain a section for APP_ENV invalid_app_env",
+            "app_config.ini does not contain a section for APP_ENV invalid_app_env",
         )
 
     def test_returns_expected_string_value(self):

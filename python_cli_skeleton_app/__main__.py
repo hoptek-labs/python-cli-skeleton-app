@@ -4,7 +4,7 @@ from python_cli_skeleton_app.app_config import AppConfig
 from python_cli_skeleton_app.app_logger import AppLogger
 from python_cli_skeleton_app.endpoint_caller import call_endpoint
 
-logger = AppLogger.getLogger()
+logger = AppLogger.get_logger()
 
 
 def run():

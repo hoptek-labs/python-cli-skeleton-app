@@ -1,7 +1,6 @@
 import os
 import sys
-
-from subprocess import run, PIPE, STDOUT
+from subprocess import PIPE, STDOUT, run
 from unittest import TestCase
 
 

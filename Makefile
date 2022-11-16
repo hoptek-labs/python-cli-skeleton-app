@@ -4,7 +4,7 @@ APP_MODULE=python_cli_skeleton_app
 setup:
 	@echo "== setup"
 	# see: https://python-poetry.org/docs/#installation
-	curl -sSL "https://install.python-poetry.org" | python3 - --version 1.2.0
+	curl -sSL "https://install.python-poetry.org" | python3 - --version 1.2.2
 
 .PHONY: install
 install:
@@ -32,7 +32,14 @@ clean:
 .PHONY: lint
 lint:
 	@echo "== run lint"
+	@echo "\n\n== run mypy"
+	poetry run mypy .
+	@echo "\n\n== run isort"
+	poetry run isort .
+	@echo "\n\n== run black"
 	poetry run black .
+	@echo "\n\n== run flake8"
+	poetry run flake8 $(APP_MODULE) tests
 
 .PHONY: run
 run:

@@ -3,7 +3,7 @@ import requests
 from python_cli_skeleton_app.app_config import AppConfig
 from python_cli_skeleton_app.app_logger import AppLogger
 
-logger = AppLogger.getLogger()
+logger = AppLogger.get_logger()
 
 
 class EndpointError(Exception):

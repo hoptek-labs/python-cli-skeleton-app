@@ -14,16 +14,14 @@ class AppConfig:
 
     # unfortunately, this class needs to hard-codedly know the location of the application configuration file
     root_dir = Path(__file__).parent.parent
-    config.read(f"{root_dir}/{app_config_filename}")
+    config.read(f"{root_dir}/{app_config_filename}")  # noqa: CCE001, CCE002
 
     app_env = os.getenv("APP_ENV")
-    if app_env is None:
+    if app_env is None:  # noqa: CCE002
         raise RuntimeError("Missing environment variable APP_ENV")
 
-    if app_env not in config.sections():
-        raise RuntimeError(
-            f"{app_config_filename} does not contain a section for APP_ENV {app_env}"
-        )
+    if app_env not in config.sections():  # noqa: CCE002
+        raise RuntimeError(f"{app_config_filename} does not contain a section for APP_ENV {app_env}")
 
     @staticmethod
     def get(key):
