@@ -39,7 +39,7 @@ inline-quotes = "double"
 extend-ignore = "E203"
 
 [tool.isort]
-line_length = 120
+profile = "black"
 
 [tool.black]
 line-length = 120
