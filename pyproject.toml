@@ -33,7 +33,7 @@ mypy = "^0.991"
 types-requests = "^2.28.11.4"
 
 [tool.flake8]
-max_line_length = 120
+max-line-length = 120
 inline-quotes = "double"
 # Line below ignores a bug. See https://github.com/PyCQA/pycodestyle/issues/373
 extend-ignore = "E203"
