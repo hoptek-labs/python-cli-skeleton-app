@@ -183,21 +183,6 @@ flake8 = ">=3.0"
 pycodestyle = "*"
 
 [[package]]
-name = "flake8-pyprojecttoml"
-version = "0.0.2"
-description = "Inject pyproject.toml support into flake8."
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-flake8 = "*"
-tomli = {version = "*", markers = "python_version < \"3.11\""}
-
-[package.extras]
-dev = ["darglint", "flake8", "flake8-annotations", "flake8-bugbear", "flake8-commas", "flake8-comprehensions", "flake8-docstrings", "flake8-fixme", "flake8-isort", "flake8-mutable", "flake8-print", "flake8-pytest-style", "flake8-quotes", "flake8-return", "flake8-simplify", "flake8-type-checking", "flake8-use-fstring", "mypy", "pep8-naming", "pylint", "pytest", "pytest-cov", "toml", "yapf"]
-
-[[package]]
 name = "flake8-quotes"
 version = "3.3.1"
 description = "Flake8 lint for quotes."
@@ -495,7 +480,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ae7e254c5583a30c6ed38e88f4b723436e794fea7b6ebee7d50147e829942580"
+content-hash = "cb8086b39cb700c98b98ce1a7feaba5d544a96fe1d220b117c4143bdd0cd43c2"
 
 [metadata.files]
 attrs = [
@@ -576,10 +561,6 @@ flake8-debugger = [
 flake8-print = [
     {file = "flake8-print-5.0.0.tar.gz", hash = "sha256:76915a2a389cc1c0879636c219eb909c38501d3a43cc8dae542081c9ba48bdf9"},
     {file = "flake8_print-5.0.0-py3-none-any.whl", hash = "sha256:84a1a6ea10d7056b804221ac5e62b1cee1aefc897ce16f2e5c42d3046068f5d8"},
-]
-flake8-pyprojecttoml = [
-    {file = "flake8-pyprojecttoml-0.0.2.tar.gz", hash = "sha256:b78dd64254e2d6aa596b5be4e2a41b81147cafec57760de1c7322d025159983c"},
-    {file = "flake8_pyprojecttoml-0.0.2-py3-none-any.whl", hash = "sha256:37b9a8e5274d04591fbecc0782f626fb31b8d266e26192ce18ada25dabfc9f1d"},
 ]
 flake8-quotes = [
     {file = "flake8-quotes-3.3.1.tar.gz", hash = "sha256:633adca6fb8a08131536af0d750b44d6985b9aba46f498871e21588c3e6f525a"},

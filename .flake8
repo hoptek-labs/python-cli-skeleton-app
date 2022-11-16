@@ -1,0 +1,5 @@
+[flake8]
+max-line-length = 120
+inline-quotes = double
+# Line below ignores a bug. See https://github.com/PyCQA/pycodestyle/issues/373
+extend-ignore = E203
