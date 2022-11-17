@@ -33,11 +33,11 @@ clean:
 lint:
 	@echo "== run lint"
 	@echo "\n\n== run mypy"
-	poetry run mypy .
+	poetry run mypy $(APP_MODULE) tests
 	@echo "\n\n== run isort"
-	poetry run isort .
+	poetry run isort $(APP_MODULE) tests
 	@echo "\n\n== run black"
-	poetry run black .
+	poetry run black $(APP_MODULE) tests
 	@echo "\n\n== run flake8"
 	poetry run flake8 $(APP_MODULE) tests
 
