@@ -31,3 +31,4 @@ class TestSmokePythonCliSkeletonApp(TestCase):
         self.assertEqual(process.returncode, 0)
 
         self.assertRegex(process.stdout, "returned status code 200")
+        self.assertRegex(process.stdout, "returned response body")
