@@ -23,13 +23,17 @@ class TestEndpointCaller(TestCase):
     @responses.activate
     def test_returns_status_code(self):
         endpoint_url = AppConfig.get("endpoint_url")
-        for status_code in [200, 400, 404, 500]:
-            with self.subTest(msg=f"Returns status code {status_code}"):
+        expected_response_body = "some response body"
+        for expected_status_code in [200, 400, 404, 500]:
+            with self.subTest(msg=f"Returns status code {expected_status_code}"):
                 responses.add(
                     responses.GET,
                     endpoint_url,
-                    body="some response body",
-                    status=status_code,
+                    body=expected_response_body,
+                    status=expected_status_code,
                 )
 
-                self.assertEqual(call_endpoint(), status_code)
+                actual_status_code, actual_response_body = call_endpoint()
+
+                self.assertEqual(expected_status_code, actual_status_code)
+                self.assertEqual(expected_response_body, actual_response_body)

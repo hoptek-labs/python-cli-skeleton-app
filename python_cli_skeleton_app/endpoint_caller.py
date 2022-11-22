@@ -20,7 +20,7 @@ def call_endpoint():
     logger.info(f"Will call endpoint {endpoint_url}")
     try:
         response = requests.get(endpoint_url)
-        return response.status_code
+        return response.status_code, response.text
     except Exception:
         # Exception chaining happens automatically as we are in an except block.
         # This means that the exception trace will include both EndpointError raised below and any underlying Exception.
