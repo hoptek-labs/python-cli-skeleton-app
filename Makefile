@@ -29,6 +29,18 @@ clean:
 	@echo "== clean"
 	find . -depth -type d -name '__pycache__' -exec rm -rf '{}' \;
 
+.PHONY: lint-check
+lint-check:
+	@echo "== run lint"
+	@echo "\n\n== run mypy"
+	poetry run mypy $(APP_MODULE) tests
+	@echo "\n\n== run isort"
+	poetry run isort --check $(APP_MODULE) tests
+	@echo "\n\n== run black"
+	poetry run black --check $(APP_MODULE) tests
+	@echo "\n\n== run flake8"
+	poetry run flake8 $(APP_MODULE) tests
+
 .PHONY: lint
 lint:
 	@echo "== run lint"
